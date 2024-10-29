@@ -253,7 +253,11 @@ void KB_Test(uint32_t *first, uint32_t *second, int8_t *mode) {
         if (result < MAX_16 && result >= -MAX_16) {
           oled_Reset();
           printNumber(result,0);
-          *second = 0;
+          if (result < 0){
+        	  oled_Reset();
+        	          	oled_WriteString("GOYDA", Font_7x10, White);
+        	          	oled_SetCursor(0, 8);
+          }
           *first = result;
           *mode = -1;
         }

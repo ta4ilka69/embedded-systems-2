@@ -253,9 +253,6 @@ void KB_Test(uint32_t *first, uint32_t *second, int8_t *mode) {
         if (result < MAX_16 && result >= -MAX_16) {
           oled_Reset();
           printNumber(result,0);
-          *second = 0;
-          *first = result;
-          *mode = -1;
         }
         else{
         	oled_Reset();
